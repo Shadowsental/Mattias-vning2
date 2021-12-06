@@ -40,8 +40,8 @@ namespace MattiasÖvning2
             while (isOn == true)
             {
 
-                Console.WriteLine("Welcome to the Main Menu \n Menu 1: Buy tickets. \n Menu 2: Repeat words ten times. \n Menu 3: Split words.");
-                Console.Write("Enter a number to determine your fate: ");
+                Console.WriteLine("Welcome to the Main Menu. You have a selection of menus that will do different things. Type in a number to view them. \n Menu 1: Buy tickets. \n Menu 2: Repeat words ten times. \n Menu 3: Split words.");
+                Console.Write("Enter a number to view something really cool: ");
                 int action = int.Parse(Console.ReadLine());
 
                 switch (action)
@@ -55,8 +55,8 @@ namespace MattiasÖvning2
                         bool addPerson = true;
                         while (addPerson == true)
                         {
-                            Console.WriteLine("\n Here you can add people to a tivoli. The costs of an admission ticket depends on a persons age." +
-                                "\n 1: Buy Tickets. \n 2: Add the total up. \n 0 Close tab.");
+                            Console.WriteLine("Welcome to the Big Cinematic Theater. The costs of a ticket depends on a persons age. Enter a number to do the following" +
+                                "\n 1: Buy Tickets. \n 2: Add the total up. \n 3: Remove the group. \n 0 Close tab.");
                             Console.Write("Enter a number: ");
                             int number = int.Parse(Console.ReadLine());
 
@@ -103,12 +103,15 @@ namespace MattiasÖvning2
                                     int sum = ageSum.Sum();
                                     Console.WriteLine($"Number of people: {personGroup.Count}. Total price: {sum}.");
                                     break;
+                                case 3:
+                                    personGroup.Clear();
+                                    break;
                             }
                         }
                         break;
 
                     case 2:
-                        Console.WriteLine("Type in a thing to repeat.");
+                        Console.WriteLine("Here you can repeat a word ten times. Type in a word or number to repeat.");
                         Console.Write("Repeat this: ");
                         string repeat = Console.ReadLine();
 
@@ -119,8 +122,8 @@ namespace MattiasÖvning2
                         break;
 
                     case 3:
-                        Console.WriteLine("Split a sentence with 3 words.");
-                        Console.Write("Type a sentence to split: ");
+                        Console.WriteLine("Here we will split sentences and output the third word in the sentence.");
+                        Console.Write("Write a sentence to split: ");
                         splitThis = Console.ReadLine();
                         string[] subs = splitThis.Split(' ');
                         for (int i = 0; i < subs.Length - 2; i += 3)
